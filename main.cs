@@ -9,27 +9,30 @@ class Program
 {
     public static void Main(string[] args)
     {
-        // This function accepts user input
-        double fahrenheit;
-        double celsius;
+        // This program guesses the correct number
+        int guess;
+        Random randomNumber = new Random();
+        int number = randomNumber.Next(1, 6);
+      
+        // input 
+        Console.WriteLine("This program lets the user guess a number between 1-6");
 
-        // input
-        Console.WriteLine("This program calculates Fahrenheit to Celsius");
         Console.WriteLine("");
-        Console.WriteLine("The conversion formula is (fahrenheit - 32) * 5 / 9");
-        Console.WriteLine("");
-        Console.WriteLine("Please enter the Fahrenheit (℉)");
-        Console.WriteLine("");
-
-        Console.Write("Input the Fahrenheit: ");
-        fahrenheit = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Input a number between 1-6: ");
+        guess = Convert.ToInt32(Console.ReadLine());
 
         // process
-        celsius = (fahrenheit - 32) * 5 / 9;
-
-        // output
         Console.WriteLine("");
-        Console.WriteLine(fahrenheit + "℉ in Celsius is: " + celsius.ToString("0.00") + "℃");
+        if (guess == number)
+        {
+            Console.WriteLine("You are correct!");
+        }
+
+        if (guess != number)
+        {
+            Console.WriteLine("Sorry ,you are incorrect!");
+        }
+
         Console.WriteLine("\nDone.");
     }
 }
